@@ -402,7 +402,8 @@ if __name__ == "__main__":
     # Fit the model.
     print("Fitting on %d samples." % len(X))
 
-    model = linear_model.LogisticRegression(max_iter = 200)
+    #model = linear_model.LogisticRegression(max_iter = 200)
+    model = XGBClassifier(use_label_encoder=False, eval_metric='logloss')
 
     # Check accuracy.
     print("Doing cross-validation.")
